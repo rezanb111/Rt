@@ -68,19 +68,20 @@
             gap:10px;
         }
         .logo-icon{
-            width:38px;
-            height:38px;
-            border-radius:14px;
+            width:42px;
+            height:42px;
+            border-radius:16px;
             background:radial-gradient(circle at top,#22c55e,#0ea5e9);
             display:flex;
             align-items:center;
             justify-content:center;
             color:#020617;
-            box-shadow:0 0 20px rgba(34,197,94,0.8);
+            box-shadow:0 0 24px rgba(34,197,94,0.9);
+            font-size:18px;
         }
         .logo-text-main{
-            font-weight:800;
-            font-size:18px;
+            font-weight:900;
+            font-size:20px;
             background:linear-gradient(135deg,#22c55e,#0ea5e9);
             -webkit-background-clip:text;
             color:transparent;
@@ -90,12 +91,12 @@
             color:#9ca3af;
         }
         .logo-video{
-            width:80px;
-            height:40px;
-            border-radius:12px;
+            width:140px;
+            height:60px;
+            border-radius:16px;
             overflow:hidden;
             border:1px solid rgba(148,163,184,0.6);
-            box-shadow:0 0 14px rgba(15,23,42,0.9);
+            box-shadow:0 0 18px rgba(15,23,42,0.9);
         }
         .logo-video video{
             width:100%;
@@ -128,7 +129,7 @@
             margin:0 auto;
             padding:90px 18px 60px;
         }
-        section:first-of-type{padding-top:120px}
+        section:first-of-type{padding-top:140px}
         h1,h2,h3{margin:0 0 14px}
         h2{font-size:26px}
         .section-title{
@@ -156,8 +157,8 @@
             align-items:stretch;
         }
         .hero-main{
-            padding:18px;
-            border-radius:22px;
+            padding:22px;
+            border-radius:26px;
             background:radial-gradient(circle at top,#020617ee,#020617dd);
             border:1px solid rgba(148,163,184,0.6);
             box-shadow:0 0 40px rgba(0,0,0,0.8);
@@ -173,9 +174,9 @@
             pointer-events:none;
         }
         .hero-title{
-            font-size:32px;
-            font-weight:800;
-            line-height:1.4;
+            font-size:34px;
+            font-weight:900;
+            line-height:1.5;
             position:relative;
             z-index:1;
         }
@@ -267,17 +268,18 @@
             grid-template-rows:minmax(0,1.1fr) minmax(0,0.9fr);
             gap:10px;
         }
-        .hero-video-card{
+        .hero-image-card{
             border-radius:22px;
             overflow:hidden;
             border:1px solid rgba(148,163,184,0.7);
             background:#020617;
             position:relative;
         }
-        .hero-video-card video{
+        .hero-image-card img{
             width:100%;
             height:100%;
             object-fit:cover;
+            display:block;
         }
         .hero-video-label{
             position:absolute;
@@ -642,7 +644,7 @@
             border:1px solid rgba(148,163,184,0.7);
             background:#020617;
         }
-        .video-card video{
+        .video-card img{
             width:100%;
             display:block;
         }
@@ -717,6 +719,34 @@
             align-items:center;
         }
 
+        .floating-support{
+            position:fixed;
+            left:18px;
+            bottom:18px;
+            z-index:60;
+        }
+        .floating-support a{
+            width:54px;
+            height:54px;
+            border-radius:999px;
+            background:radial-gradient(circle at top,#22c55e,#0ea5e9);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#020617;
+            font-size:26px;
+            box-shadow:0 0 26px rgba(34,197,94,0.9);
+            animation:float 2.4s ease-in-out infinite;
+        }
+        .floating-support a:hover{
+            transform:scale(1.05);
+            filter:brightness(1.05);
+        }
+        @keyframes float{
+            0%,100%{transform:translateY(0)}
+            50%{transform:translateY(-6px)}
+        }
+
         @media(max-width:1024px){
             .hero-grid{grid-template-columns:minmax(0,1fr)}
             .plans-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -736,7 +766,7 @@
 </head>
 <body>
 
-<!-- ویدیو بک‌گراند (آخرش 2879) -->
+<!-- ویدیو بک‌گراند -->
 <div class="bg-video-wrapper">
     <video autoplay muted loop playsinline>
         <source src="videos/47802-451812879_tiny.mp4" type="video/mp4">
@@ -744,7 +774,7 @@
 </div>
 <div class="bg-video-overlay"></div>
 
-<!-- هدر با ویدیو برند (Note GPT) -->
+<!-- هدر با ویدیو برند -->
 <header>
     <div class="nav">
         <div class="logo-wrap">
@@ -757,7 +787,7 @@
             </div>
             <div class="logo-video">
                 <video autoplay muted loop playsinline>
-                    <source src="videos/4001-176277735_tiny.mp4" type="video/mp4">
+                    <source src="videos/NOTEGPT_VIDEO_20260426011112.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
@@ -767,12 +797,19 @@
             <a href="#uptime"><i class="fa-solid fa-signal"></i> آپتایم</a>
             <a href="#register"><i class="fa-solid fa-user-plus"></i> ثبت نام</a>
             <a href="#support"><i class="fa-solid fa-headset"></i> پشتیبانی</a>
-            <a href="#videos"><i class="fa-solid fa-clapperboard"></i> ویدیوها</a>
+            <a href="#videos"><i class="fa-solid fa-clapperboard"></i> فضای دیتاسنتر</a>
             <a href="#faq"><i class="fa-solid fa-circle-question"></i> سوالات</a>
             <a href="#partners"><i class="fa-solid fa-handshake"></i> پارتنرها</a>
         </nav>
     </div>
 </header>
+
+<!-- آیکون پشتیبانی آنلاین شناور -->
+<div class="floating-support">
+    <a href="https://t.me/v2reiadmin" target="_blank" title="پشتیبانی آنلاین تلگرام">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+</div>
 
 <!-- هیرو -->
 <section id="hero">
@@ -814,13 +851,11 @@
             </div>
         </div>
         <div class="hero-side">
-            <div class="hero-video-card">
-                <video autoplay muted loop playsinline>
-                    <source src="videos/4000-176277732_tiny.mp4" type="video/mp4">
-                </video>
+            <div class="hero-image-card">
+                <img src="https://i.ibb.co/LdFzbrq3/IMG.png" alt="فضای دیتاسنتر v2rei">
                 <div class="hero-video-label">
-                    <i class="fa-solid fa-circle-play"></i>
-                    فضای زیرساخت v2rei
+                    <i class="fa-solid fa-server"></i>
+                    فضای داخلی دیتاسنتر v2rei
                 </div>
             </div>
             <div class="hero-mini-stats">
@@ -1260,65 +1295,33 @@
     </div>
 </section>
 
-<!-- ویدیوها -->
+<!-- فضای دیتاسنتر (عکس‌ها) -->
 <section id="videos">
     <div class="section-title">
         <span></span>
-        <h2>ویدیوهای فضای زیرساخت v2rei</h2>
+        <h2>فضای دیتاسنتر و زیرساخت v2rei</h2>
     </div>
     <p class="section-sub">
-        این ویدیوها آموزشی نیستند؛ فقط برای زیبایی، حس دیتاسنتر و فضای حرفه‌ای داخل سایت استفاده شده‌اند.  
-        هر زمان خواستی، فقط کافی است لینک‌ها را در تگ‌های ویدیو با فایل‌های جدید خودت عوض کنی.
+        این تصاویر از فضای دیتاسنتر و زیرساخت هستند تا حس واقعی‌تری از محیط کاری v2rei بدهند.  
+        هر زمان خواستی، فقط لینک تصاویر را در تگ‌های زیر عوض کن.
     </p>
 
     <div class="videos-grid">
         <div class="video-card">
-            <video autoplay muted loop playsinline>
-                <source src="videos/4000-176277732_tiny.mp4" type="video/mp4">
-            </video>
-            <div class="video-caption">ویدیو ۱</div>
+            <img src="https://i.ibb.co/LdFzbrq3/IMG.png" alt="دیتاسنتر v2rei - نمای ۱">
+            <div class="video-caption">رک‌ها و زیرساخت اصلی</div>
         </div>
         <div class="video-card">
-            <video autoplay muted loop playsinline>
-                <source src="videos/2176-155747466_tiny.mp4" type="video/mp4">
-            </video>
-            <div class="video-caption">ویدیو ۲</div>
+            <img src="https://i.ibb.co/V0cxW8Ms/IMG.png" alt="دیتاسنتر v2rei - نمای ۲">
+            <div class="video-caption">کابل‌کشی و شبکه ساخت‌یافته</div>
         </div>
         <div class="video-card">
-            <video autoplay muted loop playsinline>
-                <source src="videos/202587-918431513_tiny.mp4" type="video/mp4">
-            </video>
-            <div class="video-caption">ویدیو ۳</div>
+            <img src="https://i.ibb.co/67q8gbVg/IMG.png" alt="دیتاسنتر v2rei - نمای ۳">
+            <div class="video-caption">زیرساخت برق و خنک‌سازی</div>
         </div>
         <div class="video-card">
-            <video autoplay muted loop playsinline>
-                <source src="videos/14900-259623335_tiny.mp4" type="video/mp4">
-            </video>
-            <div class="video-caption">ویدیو ۴</div>
-        </div>
-        <div class="video-card">
-            <video autoplay muted loop playsinline>
-                <source src="videos/142363-780562112_tiny.mp4" type="video/mp4">
-            </video>
-            <div class="video-caption">ویدیو ۵</div>
-        </div>
-        <div class="video-card">
-            <video autoplay muted loop playsinline>
-                <source src="videos/2176-155747466_tiny.mp4" type="video/mp4">
-            </video>
-            <div class="video-caption">ویدیو ۶</div>
-        </div>
-        <div class="video-card">
-            <video autoplay muted loop playsinline>
-                <source src="videos/4001-176277735_tiny.mp4" type="video/mp4">
-            </video>
-            <div class="video-caption">ویدیو ۷</div>
-        </div>
-        <div class="video-card">
-            <video autoplay muted loop playsinline>
-                <source src="videos/87273-601148577_tiny.mp4" type="video/mp4">
-            </video>
-            <div class="video-caption">ویدیو ۸</div>
+            <img src="https://i.ibb.co/2L6SC52/IMG.png" alt="دیتاسنتر v2rei - نمای ۴">
+            <div class="video-caption">نمای کلی از فضای دیتاسنتر</div>
         </div>
     </div>
 </section>
