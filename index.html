@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>مرکز داده و دیتاسنتر v2rei | زیرساخت حرفه‌ای فروش سرور مجازی</title>
+    <title>مرکز داده و دیتاسنتر v2rei | فروش تخصصی سرور مجازی از ۱۶ دیتاسنتر جهانی</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- آیکون‌ها -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -19,13 +19,10 @@
         a{color:#38bdf8;text-decoration:none}
         a:hover{color:#22c55e}
         html{scroll-behavior:smooth}
-
-        /* اسکرول نئونی */
         ::-webkit-scrollbar{width:7px}
         ::-webkit-scrollbar-track{background:#020617}
         ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#22c55e,#0ea5e9);border-radius:999px}
 
-        /* ویدیو بک‌گراند فول‌اسکرین */
         .bg-video-wrapper{
             position:fixed;
             inset:0;
@@ -47,7 +44,6 @@
                 radial-gradient(circle at bottom,#020617ee,#020617ff);
         }
 
-        /* هدر */
         header{
             position:fixed;
             top:0;
@@ -127,7 +123,6 @@
             background:rgba(15,23,42,0.9);
         }
 
-        /* کانتینر سکشن‌ها */
         section{
             max-width:1400px;
             margin:0 auto;
@@ -154,7 +149,6 @@
             margin-bottom:14px;
         }
 
-        /* هیرو پیشرفته */
         .hero-grid{
             display:grid;
             grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);
@@ -324,7 +318,6 @@
             color:transparent;
         }
 
-        /* نوار هایلایت */
         .highlight-strip{
             margin-top:20px;
             display:grid;
@@ -355,7 +348,6 @@
         .highlight-text-main{font-weight:600}
         .highlight-text-sub{color:#9ca3af;font-size:10px}
 
-        /* کارت‌ها */
         .card{
             background:radial-gradient(circle at top,#020617ee,#020617dd);
             border-radius:20px;
@@ -363,7 +355,6 @@
             border:1px solid rgba(148,163,184,0.7);
         }
 
-        /* پلن‌ها */
         .plans-grid{
             display:grid;
             grid-template-columns:repeat(3,minmax(0,1fr));
@@ -402,6 +393,12 @@
             margin-top:4px;
             font-size:12px;
             color:#e5e7eb;
+        }
+        .plan-price strong{
+            font-size:16px;
+            background:linear-gradient(135deg,#22c55e,#0ea5e9);
+            -webkit-background-clip:text;
+            color:transparent;
         }
         .plan-specs{
             margin-top:8px;
@@ -442,10 +439,7 @@
             box-shadow:0 0 14px rgba(236,72,153,0.7);
         }
 
-        /* تب ویژگی‌های فنی */
-        .tabs{
-            margin-top:16px;
-        }
+        .tabs{margin-top:16px;}
         .tab-buttons{
             display:flex;
             flex-wrap:wrap;
@@ -473,7 +467,6 @@
         }
         .tab-content.active{display:block}
 
-        /* لوکیشن‌ها و آپتایم */
         .locations-grid{
             display:grid;
             grid-template-columns:repeat(4,minmax(0,1fr));
@@ -549,7 +542,6 @@
             align-items:center;
         }
 
-        /* فرم‌ها */
         .form-grid{
             display:grid;
             grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
@@ -618,7 +610,6 @@
         }
         .tg-pill i{color:#24a1de}
 
-        /* تایم‌لاین */
         .timeline{
             margin-top:14px;
             border-radius:18px;
@@ -640,7 +631,6 @@
         }
         .timeline-body{color:#d1d5db}
 
-        /* ویدیوها */
         .videos-grid{
             display:grid;
             grid-template-columns:repeat(4,minmax(0,1fr));
@@ -662,7 +652,6 @@
             color:#9ca3af;
         }
 
-        /* FAQ */
         .faq-list{margin-top:10px}
         .faq-item{
             border-radius:14px;
@@ -686,7 +675,6 @@
             display:none;
         }
 
-        /* پارتنرها */
         .partners-row{
             display:flex;
             flex-wrap:wrap;
@@ -711,7 +699,6 @@
             background:linear-gradient(135deg,#22c55e,#0ea5e9);
         }
 
-        /* فوتر */
         footer{
             border-top:1px solid rgba(148,163,184,0.7);
             padding:14px 18px 20px;
@@ -730,7 +717,6 @@
             align-items:center;
         }
 
-        /* ریسپانسیو */
         @media(max-width:1024px){
             .hero-grid{grid-template-columns:minmax(0,1fr)}
             .plans-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -752,7 +738,6 @@
 
 <!-- ویدیو بک‌گراند (آخرش 2879) -->
 <div class="bg-video-wrapper">
-    <!-- این src رو با اسم واقعی فایل توی videos عوض کن -->
     <video autoplay muted loop playsinline>
         <source src="videos/47802-451812879_tiny.mp4" type="video/mp4">
     </video>
@@ -771,9 +756,8 @@
                 <div class="logo-text-sub">مرکز داده و دیتاسنتر | زیرساخت فروش سرور مجازی</div>
             </div>
             <div class="logo-video">
-                <!-- این src رو با ویدیوی Note GPT که اسم برند توشه عوض کن -->
                 <video autoplay muted loop playsinline>
-                    <source src="videos/note-gpt.mp4" type="video/mp4">
+                    <source src="videos/4001-176277735_tiny.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
@@ -796,7 +780,7 @@
         <div class="hero-main">
             <h1 class="hero-title">
                 مرکز داده و دیتاسنتر <span>v2rei</span><br>
-                زیرساخت حرفه‌ای فروش سرور مجازی از ۱۶ لوکیشن
+                زیرساخت حرفه‌ای فروش سرور مجازی از ۱۶ دیتاسنتر جهانی
             </h1>
             <p class="hero-sub">
                 طراحی شده برای نمایندگان، فروشندگان و شبکه‌های حرفه‌ای که دنبال زیرساخت واقعی، پایدار و قابل اتکا هستند.  
@@ -831,7 +815,6 @@
         </div>
         <div class="hero-side">
             <div class="hero-video-card">
-                <!-- می‌تونی یکی از ویدیوهای دیگه‌ات رو اینجا بذاری -->
                 <video autoplay muted loop playsinline>
                     <source src="videos/4000-176277732_tiny.mp4" type="video/mp4">
                 </video>
@@ -905,11 +888,165 @@
     </p>
 
     <div class="plans-grid">
-        <!-- پلن‌ها مثل قبل، همون ۶ پلن با توضیحات تخصصی (می‌تونی از نسخه قبلی همین چت کپی کنی) -->
-        <!-- برای کوتاه شدن پیام، اینجا حذف کردم؛ ولی تو نسخه نهایی حتماً همون ۶ کارت قبلی رو بذار -->
+        <!-- پلن ۱ -->
+        <div class="card plan-card">
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">Core Edge</div>
+                    <div class="plan-sub">ورود حرفه‌ای به شبکه ۱۶ لوکیشن</div>
+                </div>
+                <div class="plan-tag">شروع کار</div>
+            </div>
+            <div class="plan-price">
+                قیمت هر گیگابایت: <strong>۱۱۰,۰۰۰</strong> تومان
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> vCPU روی Intel Xeon نسل جدید، مناسب ترافیک متوسط</li>
+                    <li><i class="fa-solid fa-circle"></i> NVMe Enterprise با IOPS استاندارد و Latency پایین</li>
+                    <li><i class="fa-solid fa-circle"></i> مناسب شروع فروش، تست لوکیشن‌ها و سناریوهای سبک</li>
+                    <li><i class="fa-solid fa-circle"></i> دسترسی به هر ۱۶ دیتاسنتر بدون محدودیت</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-globe"></i> ۱۶ لوکیشن فعال</span>
+                <span>مناسب شروع همکاری</span>
+            </div>
+        </div>
+
+        <!-- پلن ۲ -->
+        <div class="card plan-card">
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">Pro Transit</div>
+                    <div class="plan-sub">بهینه برای فروشندگان فعال</div>
+                </div>
+                <div class="plan-tag">پرفروش</div>
+            </div>
+            <div class="plan-price">
+                قیمت هر گیگابایت: <strong>۱۳۵,۰۰۰</strong> تومان
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> vCPU با Oversell پایین‌تر، مناسب یوزرهای همزمان بیشتر</li>
+                    <li><i class="fa-solid fa-circle"></i> NVMe با IOPS بالاتر و Queue Depth بهینه</li>
+                    <li><i class="fa-solid fa-circle"></i> پروفایل شبکه پایدارتر برای ترافیک روزانه</li>
+                    <li><i class="fa-solid fa-circle"></i> مناسب فروشندگان با چند صد یوزر فعال</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-chart-line"></i> بالانس بین قیمت و کیفیت</span>
+                <span>پیشنهاد اصلی</span>
+            </div>
+        </div>
+
+        <!-- پلن ۳ -->
+        <div class="card plan-card">
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">Enterprise I/O</div>
+                    <div class="plan-sub">تمرکز روی دیسک و IOPS</div>
+                </div>
+                <div class="plan-tag">IO Intensive</div>
+            </div>
+            <div class="plan-price">
+                قیمت هر گیگابایت: <strong>۱۶۶,۰۰۰</strong> تومان
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> NVMe Enterprise Gen4 با IOPS بسیار بالا</li>
+                    <li><i class="fa-solid fa-circle"></i> مناسب سناریوهای دیتابیس، لاگ سنگین و کش</li>
+                    <li><i class="fa-solid fa-circle"></i> محدودیت سخت‌گیرانه روی همسایه‌های پرمصرف</li>
+                    <li><i class="fa-solid fa-circle"></i> امکان طراحی Storage Pool اختصاصی</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-hard-drive"></i> تمرکز روی دیسک</span>
+                <span>برای پروژه‌های حساس</span>
+            </div>
+        </div>
+
+        <!-- پلن ۴ -->
+        <div class="card plan-card">
+            <div class="plan-ribbon">Anycast / Multi-Location</div>
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">Global Anycast</div>
+                    <div class="plan-sub">سناریوهای چند لوکیشن همزمان</div>
+                </div>
+                <div class="plan-tag">شبکه پیشرفته</div>
+            </div>
+            <div class="plan-price">
+                قیمت هر گیگابایت: <strong>۱۸۹,۰۰۰</strong> تومان
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> طراحی سناریوهای Anycast و GeoDNS روی چند دیتاسنتر</li>
+                    <li><i class="fa-solid fa-circle"></i> مناسب سرویس‌های عمومی با یوزر زیاد</li>
+                    <li><i class="fa-solid fa-circle"></i> امکان Failover بین لوکیشن‌ها</li>
+                    <li><i class="fa-solid fa-circle"></i> پروفایل شبکه بهینه برای Routeهای مختلف</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-network-wired"></i> چند لوکیشن همزمان</span>
+                <span>برای شبکه‌های بزرگ</span>
+            </div>
+        </div>
+
+        <!-- پلن ۵ -->
+        <div class="card plan-card">
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">Ultra Secure</div>
+                    <div class="plan-sub">تمرکز روی امنیت و سخت‌گیری Abuse</div>
+                </div>
+                <div class="plan-tag">Security Focused</div>
+            </div>
+            <div class="plan-price">
+                قیمت هر گیگابایت: <strong>۲۲۱,۰۰۰</strong> تومان
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> DDoS Protection چندلایه + WAF لایه ۷</li>
+                    <li><i class="fa-solid fa-circle"></i> Segmentation شبکه و Policyهای سخت‌گیرانه</li>
+                    <li><i class="fa-solid fa-circle"></i> مناسب سرویس‌های حساس و برندهای بزرگ</li>
+                    <li><i class="fa-solid fa-circle"></i> امکان فعال‌سازی رمزنگاری دیسک و Kernel Hardened</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-shield-halved"></i> تمرکز روی امنیت</span>
+                <span>برای سرویس‌های حساس</span>
+            </div>
+        </div>
+
+        <!-- پلن ۶ -->
+        <div class="card plan-card">
+            <div class="plan-ribbon">Ultimate Provider</div>
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">Ultimate Provider</div>
+                    <div class="plan-sub">برای فروشندگان سطح بالا و شبکه‌های بزرگ</div>
+                </div>
+                <div class="plan-tag">High Volume</div>
+            </div>
+            <div class="plan-price">
+                قیمت هر گیگابایت: <strong>۲۵۹,۰۰۰</strong> تومان
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> Nodeهای اختصاصی، Oversell بسیار پایین</li>
+                    <li><i class="fa-solid fa-circle"></i> طراحی سناریو اختصاصی برای هر لوکیشن</li>
+                    <li><i class="fa-solid fa-circle"></i> امکان قرارداد بلندمدت و ظرفیت بالا</li>
+                    <li><i class="fa-solid fa-circle"></i> مناسب برندهایی که زیرساخت خودشان را می‌خواهند</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-crown"></i> سطح نهایی همکاری</span>
+                <span>برای Providerها</span>
+            </div>
+        </div>
     </div>
 
-    <!-- تب ویژگی‌های فنی کلی -->
     <div class="card tabs">
         <div class="tab-buttons">
             <button class="active" data-tab="cpu">پردازنده و معماری</button>
@@ -1123,7 +1260,7 @@
     </div>
 </section>
 
-<!-- ویدیوها (بدون اسم‌های عجیب، فقط تمیز و ساده) -->
+<!-- ویدیوها -->
 <section id="videos">
     <div class="section-title">
         <span></span>
@@ -1197,7 +1334,6 @@
     </p>
 
     <div class="faq-list">
-        <!-- همون سوالات قبلی + هرچی دوست داری اضافه کن -->
         <div class="faq-item">
             <div class="faq-question">
                 <span>۱. همه پلن‌ها روی ۱۶ لوکیشن فعال هستند؟</span>
@@ -1208,7 +1344,50 @@
                 تفاوت پلن‌ها در نوع CPU، سطح Oversell، نوع RAM، IOPS دیسک NVMe، نوع شبکه، امنیت و SLA است.
             </div>
         </div>
-        <!-- بقیه FAQها مثل نسخه قبلی -->
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۲. امکان طراحی سناریوی اختصاصی برای من وجود دارد؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                بله، برای پلن‌های بالاتر (به‌خصوص Global Anycast و Ultimate Provider) می‌توانیم سناریوی اختصاصی  
+                بر اساس نوع استفاده، تعداد یوزر، لوکیشن‌های هدف، حساسیت سرویس و بودجه طراحی کنیم.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۳. آپتایم واقعی چقدر است؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                میانگین آپتایم شبکه روی ۱۶ لوکیشن در بازه‌های طولانی، نزدیک به ۹۹.۹۹٪ است.  
+                برای سرویس‌های حساس، می‌توانیم سناریوهای Failover و Multi-Location طراحی کنیم تا ریسک قطعی کاهش یابد.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۴. Abuse و محدودیت‌ها چطور مدیریت می‌شود؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                روی پلن‌های Ultra Secure و Ultimate Provider، سیاست‌های Abuse و امنیتی سخت‌گیرانه‌تری اعمال می‌شود  
+                تا کیفیت سرویس برای همه حفظ شود. در عین حال، تلاش می‌کنیم تا جای ممکن با فروشندگان هماهنگ و منعطف باشیم.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۵. امکان پرداخت ماهانه / حجمی وجود دارد؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                بله، ساختار قیمت‌گذاری بر اساس هر گیگابایت است و می‌توانیم بر اساس حجم مصرفی،  
+                تعداد یوزر و نوع سناریو، مدل پرداخت را برایت تنظیم کنیم.
+            </div>
+        </div>
     </div>
 </section>
 
@@ -1269,7 +1448,6 @@
 </footer>
 
 <script>
-    // لوکیشن‌ها
     const locations = [
         { dc: "Equinix LD5", country: "لندن، انگلستان" },
         { dc: "Equinix FR5", country: "فرانکفورت، آلمان" },
@@ -1323,7 +1501,6 @@
     renderLocations();
     setInterval(renderLocations,8000);
 
-    // کانتر کاربران و نمایندگان
     const USERS_KEY="v2rei_users";
     const RESELLERS_KEY="v2rei_resellers";
     const DATE_KEY="v2rei_last_date";
@@ -1348,7 +1525,6 @@
     }
     initCounters();
 
-    // فرم‌ها
     document.getElementById("registerForm").addEventListener("submit",e=>{
         e.preventDefault();
         const box=document.getElementById("registerSuccess");
@@ -1362,7 +1538,6 @@
         box.scrollIntoView({behavior:"smooth",block:"center"});
     });
 
-    // FAQ
     document.querySelectorAll(".faq-question").forEach(q=>{
         q.addEventListener("click",()=>{
             const answer=q.nextElementSibling;
@@ -1377,7 +1552,6 @@
         });
     });
 
-    // تب‌ها
     document.querySelectorAll(".tab-buttons button").forEach(btn=>{
         btn.addEventListener("click",()=>{
             document.querySelectorAll(".tab-buttons button").forEach(b=>b.classList.remove("active"));
