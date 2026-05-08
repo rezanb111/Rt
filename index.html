@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مرکز داده و دیتاسنتر v2rei | فروش سرور مجازی از ۱۶ دیتاسنتر جهانی</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- آیکون‌ها -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ====== بیس استایل ====== */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "IRANSans", "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #020617 0, #020617 40%, #02010f 100%);
+            color: #f9fafb;
+            line-height: 1.7;
+        }
+        a { color: #00d4ff; text-decoration: none; }
+        a:hover { color: #00f5a0; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ====== هدر و منو ====== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background: radial-gradient(circle at top, rgba(15,23,42,0.98), rgba(2,6,23,0.96));
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(148,163,184,0.4);
+        }
+        .nav {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 10px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            background: radial-gradient(circle at top, #00f5a0, #00d4ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #020617;
+            box-shadow: 0 0 18px rgba(34,197,94,0.7);
+        }
+        .logo-text-main {
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg,#00f5a0,#00d4ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo-text-sub {
+            font-size: 11px;
+            color: #9ca3af;
+        }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 12px;
+        }
+        .nav-links a {
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            color: #e5e7eb;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-links a i {
+            font-size: 11px;
+        }
+        .nav-links a:hover {
+            border-color: rgba(148,163,184,0.7);
+            background: rgba(15,23,42,0.9);
+        }
+
+        /* ====== سکشن‌ها ====== */
+        section {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 90px 22px 60px;
+        }
+        section:first-of-type {
+            padding-top: 120px;
+        }
+        h1, h2, h3 {
+            margin: 0 0 16px;
+        }
+        h2 {
+            font-size: 26px;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .section-title span {
+            width: 34px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#00f5a0,#00d4ff);
+        }
+        .section-sub {
+            font-size: 13px;
+            color: #d1d5db;
+            margin-bottom: 14px;
+        }
+
+        /* ====== هیرو ====== */
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 30px;
+            align-items: center;
+        }
+        .hero-title {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        .hero-title span {
+            background: linear-gradient(135deg,#00f5a0,#00d4ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .hero-sub {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #e5e7eb;
+        }
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .badge {
+            padding: 6px 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.6);
+            background: rgba(15,23,42,0.9);
+            font-size: 11px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge i {
+            font-size: 11px;
+            color: #22c55e;
+        }
+        .hero-cta {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .btn-primary, .btn-outline, .btn-ghost {
+            border-radius: 999px;
+            padding: 9px 18px;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg,#00f5a0,#00d4ff);
+            color: #020617;
+            font-weight: 600;
+            box-shadow: 0 0 18px rgba(34,197,94,0.6);
+        }
+        .btn-primary:hover {
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(148,163,184,0.8);
+            color: #e5e7eb;
+        }
+        .btn-outline:hover {
+            background: rgba(15,23,42,0.9);
+        }
+        .btn-ghost {
+            background: rgba(15,23,42,0.7);
+            border: 1px dashed rgba(148,163,184,0.7);
+            color: #9ca3af;
+        }
+        .btn-ghost:hover {
+            background: rgba(15,23,42,0.95);
+        }
+        .hero-extra-row {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 11px;
+            color: #9ca3af;
+        }
+        .hero-extra-row span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hero-extra-row i {
+            color: #22c55e;
+        }
+
+        .hero-video-wrapper {
+            position: relative;
+            border-radius: 26px;
+            overflow: hidden;
+            border: 1px solid rgba(148,163,184,0.6);
+            box-shadow: 0 0 40px rgba(0,0,0,0.8);
+        }
+        .hero-video-wrapper video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        .hero-video-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top,#00f5a022,transparent 60%);
+            pointer-events: none;
+        }
+        .hero-video-label {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(15,23,42,0.9);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(148,163,184,0.7);
+        }
+        .hero-video-label i {
+            color: #22c55e;
+        }
+
+        /* ====== نوار هایلایت زیر هیرو ====== */
+        .highlight-strip {
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: repeat(4,minmax(0,1fr));
+            gap: 10px;
+            font-size: 11px;
+        }
+        .highlight-card {
+            background: radial-gradient(circle at top,#020617,#020617);
+            border-radius: 14px;
+            padding: 8px 10px;
+            border: 1px solid rgba(148,163,184,0.5);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .highlight-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #22c55e;
+            font-size: 11px;
+        }
+        .highlight-text-main {
+            font-weight: 600;
+        }
+        .highlight-text-sub {
+            color: #9ca3af;
+            font-size: 10px;
+        }
+
+        /* ====== پلن‌ها ====== */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: 16px;
+        }
+        .plan-card {
+            background: radial-gradient(circle at top,#020617,#020617);
+            border-radius: 18px;
+            padding: 16px;
+            border: 1px solid rgba(148,163,184,0.6);
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-card::before {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background: radial-gradient(circle at top,#00f5a015,transparent 60%);
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .plan-card:hover::before {
+            opacity: 1;
+        }
+        .plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .plan-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .plan-sub {
+            font-size: 11px;
+            color: #9ca3af;
+        }
+        .plan-tag {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.9);
+            border: 1px solid rgba(34,197,94,0.7);
+            color: #bbf7d0;
+        }
+        .plan-price {
+            margin-top: 6px;
+            font-size: 13px;
+            color: #e5e7eb;
+        }
+        .plan-price span {
+            font-size: 19px;
+            font-weight: 800;
+            color: #22c55e;
+        }
+        .plan-specs {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #d1d5db;
+        }
+        .plan-specs ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .plan-specs li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .plan-specs li i {
+            margin-top: 3px;
+            color: #38bdf8;
+            font-size: 9px;
+        }
+        .plan-footer {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #9ca3af;
+        }
+        .plan-footer i {
+            color: #22c55e;
+        }
+        .plan-ribbon {
+            position: absolute;
+            top: 10px;
+            left: -40px;
+            transform: rotate(-35deg);
+            background: linear-gradient(135deg,#f97316,#ec4899);
+            color: #020617;
+            font-size: 10px;
+            padding: 4px 40px;
+            font-weight: 700;
+            box-shadow: 0 0 14px rgba(236,72,153,0.7);
+        }
+
+        /* ====== ردیف ویژگی‌های فنی ====== */
+        .tech-row {
+            margin-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(4,minmax(0,1fr));
+            gap: 12px;
+            font-size: 11px;
+        }
+        .tech-card {
+            background: radial-gradient(circle at top,#020617,#020617);
+            border-radius: 14px;
+            padding: 10px;
+            border: 1px dashed rgba(148,163,184,0.7);
+        }
+        .tech-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .tech-body {
+            color: #9ca3af;
+        }
+
+        /* ====== آپتایم و لوکیشن‌ها ====== */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(4,minmax(0,1fr));
+            gap: 10px;
+            font-size: 11px;
+        }
+        .location-card {
+            background: radial-gradient(circle at top,#020617,#020617);
+            border-radius: 14px;
+            padding: 9px;
+            border: 1px solid rgba(148,163,184,0.7);
+        }
+        .location-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+        .location-dc {
+            font-weight: 600;
+        }
+        .location-country {
+            color: #9ca3af;
+        }
+        .location-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 6px;
+            margin-top: 4px;
+        }
+        .metric-pill {
+            padding: 2px 6px;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.9);
+            border: 1px solid rgba(148,163,184,0.7);
+            font-size: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .metric-pill.good {
+            border-color: rgba(34,197,94,0.8);
+            color: #bbf7d0;
+        }
+        .metric-pill.warn {
+            border-color: rgba(234,179,8,0.8);
+            color: #facc15;
+        }
+        .metric-pill i {
+            font-size: 9px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: 14px;
+            margin-top: 14px;
+        }
+        .stat-card {
+            background: radial-gradient(circle at top,#020617,#020617);
+            border-radius: 16px;
+            padding: 12px;
+            border: 1px solid rgba(148,163,184,0.7);
+            font-size: 12px;
+        }
+        .stat-label {
+            color: #9ca3af;
+            margin-bottom: 4px;
+        }
+        .stat-value {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg,#00f5a0,#00d4ff);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .stat-sub {
+            font-size: 11px;
+            color: #9ca3af;
+            margin-top: 2px;
+        }
+
+        /* ====== فرم‌ها ====== */
+        .form-grid {
+            display: grid;
+            grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+            gap: 20px;
+        }
+        .card {
+            background: radial-gradient(circle at top,#020617,#020617);
+            border-radius: 18px;
+            padding: 16px;
+            border: 1px solid rgba(148,163,184,0.7);
+        }
+        label {
+            font-size: 12px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        input, select, textarea {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid rgba(148,163,184,0.7);
+            background: rgba(15,23,42,0.95);
+            color: #f9fafb;
+            padding: 7px 9px;
+            font-size: 12px;
+            outline: none;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #22c55e;
+            box-shadow: 0 0 0 1px rgba(34,197,94,0.5);
+        }
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2,minmax(0,1fr));
+            gap: 8px;
+        }
+        .form-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+        }
+        .register-success {
+            display: none;
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 12px;
+            background: rgba(22,163,74,0.12);
+            border: 1px solid rgba(22,163,74,0.6);
+            font-size: 12px;
+        }
+        .register-success strong {
+            color: #4ade80;
+        }
+        .tg-links {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+        .tg-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.95);
+            border: 1px solid rgba(59,130,246,0.7);
+            font-size: 11px;
+        }
+        .tg-pill i {
+            color: #24a1de;
+        }
+
+        /* ====== ویدیوها ====== */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(4,minmax(0,1fr));
+            gap: 12px;
+        }
+        .video-card {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(148,163,184,0.7);
+            background: #020617;
+        }
+        .video-card video {
+            width: 100%;
+            display: block;
+        }
+        .video-caption {
+            padding: 7px 9px;
+            font-size: 11px;
+            color: #9ca3af;
+        }
+
+        /* ====== FAQ ====== */
+        .faq-list {
+            margin-top: 10px;
+        }
+        .faq-item {
+            border-radius: 14px;
+            border: 1px solid rgba(148,163,184,0.7);
+            margin-bottom: 8px;
+            overflow: hidden;
+            background: rgba(15,23,42,0.95);
+        }
+        .faq-question {
+            padding: 9px 11px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+        .faq-answer {
+            padding: 0 11px 9px;
+            font-size: 12px;
+            color: #d1d5db;
+            display: none;
+        }
+
+        /* ====== پارتنرها ====== */
+        .partners-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-top: 8px;
+        }
+        .partner-pill {
+            padding: 6px 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.7);
+            font-size: 11px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(15,23,42,0.95);
+        }
+        .partner-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: linear-gradient(135deg,#00f5a0,#00d4ff);
+        }
+
+        /* ====== نوار CTA ====== */
+        .cta-strip {
+            margin-top: 18px;
+            background: radial-gradient(circle at top,#0f172a,#020617);
+            border-radius: 18px;
+            padding: 12px 14px;
+            border: 1px solid rgba(148,163,184,0.7);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 12px;
+            align-items: center;
+        }
+
+        /* ====== فوتر ====== */
+        footer {
+            border-top: 1px solid rgba(148,163,184,0.7);
+            padding: 14px 22px 22px;
+            margin-top: 20px;
+            font-size: 11px;
+            color: #9ca3af;
+            background: #020617;
+        }
+        .footer-inner {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* ====== ریسپانسیو ====== */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: minmax(0,1fr);
+            }
+            .plans-grid {
+                grid-template-columns: repeat(2,minmax(0,1fr));
+            }
+            .locations-grid {
+                grid-template-columns: repeat(2,minmax(0,1fr));
+            }
+            .videos-grid {
+                grid-template-columns: repeat(2,minmax(0,1fr));
+            }
+            .tech-row {
+                grid-template-columns: repeat(2,minmax(0,1fr));
+            }
+        }
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .plans-grid {
+                grid-template-columns: minmax(0,1fr);
+            }
+            .locations-grid {
+                grid-template-columns: minmax(0,1fr);
+            }
+            .stats-row {
+                grid-template-columns: minmax(0,1fr);
+            }
+            .form-grid {
+                grid-template-columns: minmax(0,1fr);
+            }
+            .videos-grid {
+                grid-template-columns: minmax(0,1fr);
+            }
+            .highlight-strip {
+                grid-template-columns: repeat(2,minmax(0,1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========== هدر ========== -->
+<header>
+    <div class="nav">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-database"></i>
+            </div>
+            <div>
+                <div class="logo-text-main">v2rei Datacenter</div>
+                <div class="logo-text-sub">مرکز داده و دیتاسنتر | ۱۶ لوکیشن جهانی</div>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="#hero"><i class="fa-solid fa-house"></i> خانه</a>
+            <a href="#plans"><i class="fa-solid fa-layer-group"></i> پلن‌ها</a>
+            <a href="#uptime"><i class="fa-solid fa-signal"></i> آپتایم و لوکیشن‌ها</a>
+            <a href="#register"><i class="fa-solid fa-user-plus"></i> ثبت نام</a>
+            <a href="#support"><i class="fa-solid fa-headset"></i> پشتیبانی</a>
+            <a href="#videos"><i class="fa-solid fa-clapperboard"></i> ویدیوها</a>
+            <a href="#faq"><i class="fa-solid fa-circle-question"></i> سوالات متداول</a>
+            <a href="#partners"><i class="fa-solid fa-handshake"></i> پارتنرها</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ========== هیرو ========== -->
+<section id="hero">
+    <div class="hero">
+        <div>
+            <h1 class="hero-title">
+                مرکز داده و دیتاسنتر <span>v2rei</span><br>
+                فروش سرور مجازی از ۱۶ دیتاسنتر جهانی
+            </h1>
+            <p class="hero-sub">
+                زیرساخت نسل جدید برای فروش سرور مجازی، تونل، پروکسی و سرویس‌های پرمصرف،  
+                روی ۱۶ لوکیشن برتر دنیا با روتینگ بهینه، NVMe Enterprise، مجازی‌سازی KVM و مانیتورینگ ۲۴/۷.  
+                طراحی شده مخصوص نمایندگان، فروشندگان و شبکه‌های حرفه‌ای.
+            </p>
+            <div class="hero-badges">
+                <span class="badge"><i class="fa-solid fa-globe"></i> ۱۶ دیتاسنتر در ۱۶ کشور</span>
+                <span class="badge"><i class="fa-solid fa-microchip"></i> CPU نسل جدید Intel/AMD</span>
+                <span class="badge"><i class="fa-solid fa-hard-drive"></i> NVMe Enterprise Gen4</span>
+                <span class="badge"><i class="fa-solid fa-shield-halved"></i> DDoS Protection چندلایه</span>
+                <span class="badge"><i class="fa-solid fa-gauge-high"></i> پینگ بهینه برای ایران و اروپا</span>
+                <span class="badge"><i class="fa-solid fa-network-wired"></i> Anycast / Multi-Location Ready</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#register" class="btn-primary">
+                    <i class="fa-solid fa-user-plus"></i>
+                    ثبت نام و درخواست پنل
+                </a>
+                <a href="#plans" class="btn-outline">
+                    <i class="fa-solid fa-layer-group"></i>
+                    مشاهده پلن‌ها
+                </a>
+                <a href="#uptime" class="btn-ghost">
+                    <i class="fa-solid fa-signal"></i>
+                    وضعیت لحظه‌ای دیتاسنترها
+                </a>
+            </div>
+            <div class="hero-extra-row">
+                <span><i class="fa-solid fa-circle-check"></i> مناسب فروشندگان، نمایندگان و شبکه‌های بزرگ</span>
+                <span><i class="fa-solid fa-circle-check"></i> امکان طراحی سناریو اختصاصی برای هر لوکیشن</span>
+            </div>
+        </div>
+        <div class="hero-video-wrapper">
+            <!-- ویدیو گراند سایت -->
+            <video autoplay muted loop playsinline>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/47802-451812879_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+            <div class="hero-video-label">
+                <i class="fa-solid fa-circle-play"></i>
+                گراند اینتروی مرکز داده v2rei
+            </div>
+        </div>
+    </div>
+
+    <!-- نوار هایلایت زیر هیرو -->
+    <div class="highlight-strip">
+        <div class="highlight-card">
+            <div class="highlight-icon"><i class="fa-solid fa-server"></i></div>
+            <div>
+                <div class="highlight-text-main">زیرساخت اختصاصی</div>
+                <div class="highlight-text-sub">Dedicated Node برای پلن‌های بالاتر</div>
+            </div>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon"><i class="fa-solid fa-route"></i></div>
+            <div>
+                <div class="highlight-text-main">روتینگ بهینه</div>
+                <div class="highlight-text-sub">مسیرهای بهینه برای ایران و اروپا</div>
+            </div>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon"><i class="fa-solid fa-lock"></i></div>
+            <div>
+                <div class="highlight-text-main">امنیت چندلایه</div>
+                <div class="highlight-text-sub">DDoS + WAF + Anti-Abuse</div>
+            </div>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon"><i class="fa-solid fa-headset"></i></div>
+            <div>
+                <div class="highlight-text-main">پشتیبانی تخصصی</div>
+                <div class="highlight-text-sub">تلگرام + تیکت + مانیتورینگ</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== پلن‌ها ========== -->
+<section id="plans">
+    <div class="section-title">
+        <span></span>
+        <h2>پلن‌های تخصصی فروش سرور مجازی (قیمت هر گیگابایت)</h2>
+    </div>
+    <p class="section-sub">
+        تمام پلن‌ها روی هر ۱۶ لوکیشن فعال هستند؛ تفاوت در سطح منابع، نوع پردازنده، IOPS دیسک، شبکه، امنیت و SLA است.  
+        قیمت‌ها بر اساس هر گیگابایت ترافیک محاسبه شده‌اند و برای فروشندگان و نمایندگان بهینه شده‌اند.
+    </p>
+
+    <div class="plans-grid">
+        <!-- پلن ۱ -->
+        <div class="plan-card">
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">پلن Core Edge</div>
+                    <div class="plan-sub">ورود حرفه‌ای به شبکه ۱۶ لوکیشن</div>
+                </div>
+                <span class="plan-tag">هر گیگابایت: <strong>۱۱۰,۰۰۰</strong> تومان</span>
+            </div>
+            <div class="plan-price">
+                شروع مناسب برای پروژه‌های سبک، تونلینگ، پروکسی و سرویس‌های کم‌مصرف.
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> CPU: نسل جدید Intel Xeon Silver، حداکثر ۲ vCPU برای هر اینستنس</li>
+                    <li><i class="fa-solid fa-circle"></i> RAM: DDR4 ECC بهینه‌سازی‌شده برای کانکشن‌های سبک و متوسط</li>
+                    <li><i class="fa-solid fa-circle"></i> Disk: NVMe Enterprise Tier-1 با IOPS پایه برای سرویس‌های IO-Low</li>
+                    <li><i class="fa-solid fa-circle"></i> Network: پورت ۱Gbps اشتراکی، بهینه‌سازی TCP برای HTTP/HTTPS</li>
+                    <li><i class="fa-solid fa-circle"></i> Virtualization: KVM Full Virtualization با امکان نصب انواع لینوکس</li>
+                    <li><i class="fa-solid fa-circle"></i> Security: فایروال لایه ۳ و ۴، فیلتر اولیه DDoS تا ۲۰Gbps</li>
+                    <li><i class="fa-solid fa-circle"></i> SLA: سطح دسترسی ۹۹.۷٪ ماهانه، مانیتورینگ پایه</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-globe"></i> دسترسی به هر ۱۶ دیتاسنتر</span>
+                <span><i class="fa-solid fa-user"></i> مناسب استارت‌آپ‌ها و یوزرهای شخصی</span>
+            </div>
+        </div>
+
+        <!-- پلن ۲ -->
+        <div class="plan-card">
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">پلن Pro Transit</div>
+                    <div class="plan-sub">بهینه‌سازی برای ترافیک پایدار و یوزرهای بیشتر</div>
+                </div>
+                <span class="plan-tag">هر گیگابایت: <strong>۱۳۵,۰۰۰</strong> تومان</span>
+            </div>
+            <div class="plan-price">
+                مناسب ارائه‌دهندگان سرویس، پنل‌های اشتراکی و ترافیک پایدار روزانه.
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> CPU: Intel Xeon Gold / AMD EPYC Mixed Cluster با Turbo تا ۳.۵GHz</li>
+                    <li><i class="fa-solid fa-circle"></i> RAM: DDR4 ECC با پروفایل Performance برای کانکشن‌های همزمان بیشتر</li>
+                    <li><i class="fa-solid fa-circle"></i> Disk: NVMe Enterprise Gen4 با IOPS متوسط رو به بالا</li>
+                    <li><i class="fa-solid fa-circle"></i> Network: پورت ۱Gbps تضمینی، QoS اختصاصی برای ترافیک ایران و اروپا</li>
+                    <li><i class="fa-solid fa-circle"></i> Virtualization: KVM + امکان Snapshot و Backup زمان‌بندی‌شده</li>
+                    <li><i class="fa-solid fa-circle"></i> Security: DDoS Protection لایه ۳/۴/۷ تا ۵۰Gbps، WAF پایه</li>
+                    <li><i class="fa-solid fa-circle"></i> SLA: سطح دسترسی ۹۹.۸٪، مانیتورینگ ۲۴/۷ و آلارم ایمیل/تلگرام</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-globe"></i> ۱۶ لوکیشن با روتینگ بهینه</span>
+                <span><i class="fa-solid fa-users"></i> مناسب فروشندگان و نمایندگان سطح ۱</span>
+            </div>
+        </div>
+
+        <!-- پلن ۳ -->
+        <div class="plan-card">
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">پلن Enterprise I/O</div>
+                    <div class="plan-sub">تمرکز روی IOPS و دیسک پرسرعت</div>
+                </div>
+                <span class="plan-tag">هر گیگابایت: <strong>۱۶۶,۰۰۰</strong> تومان</span>
+            </div>
+            <div class="plan-price">
+                مناسب سرویس‌های دیتابیس، لاگینگ، کش و سرویس‌های حساس به دیسک.
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> CPU: AMD EPYC نسل جدید با تعداد هسته بالا و SMT فعال</li>
+                    <li><i class="fa-solid fa-circle"></i> RAM: DDR4/DDR5 ECC با پروفایل Low Latency</li>
+                    <li><i class="fa-solid fa-circle"></i> Disk: NVMe Enterprise Gen4 با IOPS بسیار بالا و Write Endurance بالا</li>
+                    <li><i class="fa-solid fa-circle"></i> Network: پورت ۲.۵Gbps اشتراکی با Burst تا ۵Gbps</li>
+                    <li><i class="fa-solid fa-circle"></i> Virtualization: KVM + امکان Attach دیسک‌های اضافی NVMe</li>
+                    <li><i class="fa-solid fa-circle"></i> Security: رمزنگاری دیسک در سطح Hypervisor، Anti-Abuse پیشرفته</li>
+                    <li><i class="fa-solid fa-circle"></i> SLA: ۹۹.۹٪ با اولویت بالاتر در رفع اختلال</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-database"></i> مناسب دیتابیس و سرویس‌های حساس</span>
+                <span><i class="fa-solid fa-user-tie"></i> مناسب سازمان‌ها و تیم‌های فنی</span>
+            </div>
+        </div>
+
+        <!-- پلن ۴ -->
+        <div class="plan-card">
+            <div class="plan-ribbon">پیشنهاد ویژه شبکه</div>
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">پلن Global Anycast</div>
+                    <div class="plan-sub">شبکه توزیع‌شده روی ۱۶ لوکیشن</div>
+                </div>
+                <span class="plan-tag">هر گیگابایت: <strong>۱۸۹,۰۰۰</strong> تومان</span>
+            </div>
+            <div class="plan-price">
+                مناسب ساخت زیرساخت توزیع‌شده، Anycast، Load Balancing و سرویس‌های جهانی.
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> CPU: ترکیب Intel Xeon Gold و AMD EPYC در ۱۶ دیتاسنتر برای High Availability</li>
+                    <li><i class="fa-solid fa-circle"></i> RAM: پروفایل High Concurrency برای کانکشن‌های بسیار زیاد</li>
+                    <li><i class="fa-solid fa-circle"></i> Disk: NVMe + Replication بین نودها (در صورت نیاز و طراحی اختصاصی)</li>
+                    <li><i class="fa-solid fa-circle"></i> Network: امکان Anycast / GeoDNS، پورت ۲.۵Gbps با QoS پیشرفته</li>
+                    <li><i class="fa-solid fa-circle"></i> Virtualization: KVM + امکان ساخت Topology اختصاصی بین لوکیشن‌ها</li>
+                    <li><i class="fa-solid fa-circle"></i> Security: DDoS Global Scrubbing، Rate Limit هوشمند، WAF پیشرفته</li>
+                    <li><i class="fa-solid fa-circle"></i> SLA: ۹۹.۹٪ با مانیتورینگ چندلایه و گزارش‌گیری دوره‌ای</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-network-wired"></i> مناسب شبکه‌های توزیع‌شده</span>
+                <span><i class="fa-solid fa-building"></i> مناسب برندها و سرویس‌های بین‌المللی</span>
+            </div>
+        </div>
+
+        <!-- پلن ۵ -->
+        <div class="plan-card">
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">پلن Ultra Secure</div>
+                    <div class="plan-sub">تمرکز روی امنیت، حریم خصوصی و سخت‌گیری Abuse</div>
+                </div>
+                <span class="plan-tag">هر گیگابایت: <strong>۲۲۱,۰۰۰</strong> تومان</span>
+            </div>
+            <div class="plan-price">
+                مناسب سرویس‌های حساس، سازمانی، فین‌تک و پروژه‌های با الزامات امنیتی بالا.
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> CPU: Dedicated vCPU Pool با محدودیت Oversell بسیار پایین</li>
+                    <li><i class="fa-solid fa-circle"></i> RAM: Dedicated RAM Profile با Isolation قوی بین ماشین‌ها</li>
+                    <li><i class="fa-solid fa-circle"></i> Disk: NVMe با Encryption در سطح Storage و امکان Key Management</li>
+                    <li><i class="fa-solid fa-circle"></i> Network: Segmented Network، VLAN اختصاصی، فایروال لایه ۷ پیشرفته</li>
+                    <li><i class="fa-solid fa-circle"></i> Virtualization: KVM + امکان Hardened Kernel و تنظیمات امنیتی سفارشی</li>
+                    <li><i class="fa-solid fa-circle"></i> Security: SOC مانیتورینگ، Alerting پیشرفته، لاگ‌گیری امنیتی</li>
+                    <li><i class="fa-solid fa-circle"></i> SLA: ۹۹.۹٪ با قرارداد امنیتی و سیاست Incident Response</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-lock"></i> مناسب پروژه‌های امنیت‌محور</span>
+                <span><i class="fa-solid fa-id-card-clip"></i> مناسب سازمان‌ها و نهادها</span>
+            </div>
+        </div>
+
+        <!-- پلن ۶ -->
+        <div class="plan-card">
+            <div class="plan-ribbon" style="background:linear-gradient(135deg,#22c55e,#0ea5e9);">پلن ویژه نمایندگان</div>
+            <div class="plan-header">
+                <div>
+                    <div class="plan-name">پلن Ultimate Provider</div>
+                    <div class="plan-sub">فول‌استک برای نمایندگان و فروشندگان بزرگ</div>
+                </div>
+                <span class="plan-tag">هر گیگابایت: <strong>۲۵۹,۰۰۰</strong> تومان</span>
+            </div>
+            <div class="plan-price">
+                طراحی شده برای دیتاسنترهای مجازی، فروشندگان بزرگ و شبکه‌های چندلایه نمایندگی.
+            </div>
+            <div class="plan-specs">
+                <ul>
+                    <li><i class="fa-solid fa-circle"></i> CPU: Dedicated High-Frequency vCPU با امکان Pinning روی هسته‌های فیزیکی</li>
+                    <li><i class="fa-solid fa-circle"></i> RAM: Dedicated RAM Pool با امکان Reservation و Overcommit کنترل‌شده</li>
+                    <li><i class="fa-solid fa-circle"></i> Disk: NVMe Enterprise Tier-0 با IOPS بسیار بالا + امکان Storage Pool اختصاصی</li>
+                    <li><i class="fa-solid fa-circle"></i> Network: پورت ۱۰Gbps (در صورت طراحی اختصاصی)، BGP Session، Announce رنج IP</li>
+                    <li><i class="fa-solid fa-circle"></i> Virtualization: KVM + API اختصاصی برای اتوماسیون و صدور آنی سرویس</li>
+                    <li><i class="fa-solid fa-circle"></i> Security: DDoS Enterprise، WAF اختصاصی، RuleSet سفارشی</li>
+                    <li><i class="fa-solid fa-circle"></i> SLA: ۹۹.۹۹٪ با پشتیبانی اولویت‌دار و کانال مستقیم فنی</li>
+                </ul>
+            </div>
+            <div class="plan-footer">
+                <span><i class="fa-solid fa-crown"></i> مناسب نمایندگان کلان و برندینگ</span>
+                <span><i class="fa-solid fa-code-branch"></i> مناسب ساخت زیرساخت فروش چندسطحی</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ردیف ویژگی‌های فنی کلی -->
+    <div class="tech-row">
+        <div class="tech-card">
+            <div class="tech-title"><i class="fa-solid fa-microchip"></i> معماری پردازنده</div>
+            <div class="tech-body">
+                ترکیب Intel Xeon و AMD EPYC در ۱۶ دیتاسنتر، با پروفایل‌های مختلف برای فرکانس بالا، هسته زیاد و Oversell پایین.
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-title"><i class="fa-solid fa-hard-drive"></i> استوریج NVMe</div>
+            <div class="tech-body">
+                NVMe Enterprise Gen4 با IOPS بالا، Latency پایین و امکان طراحی Pool اختصاصی برای پلن‌های بالاتر.
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-title"><i class="fa-solid fa-shield-halved"></i> امنیت شبکه</div>
+            <div class="tech-body">
+                DDoS Protection چندلایه، WAF، Rate Limit هوشمند، Segmentation شبکه و Anti-Abuse اختصاصی.
+            </div>
+        </div>
+        <div class="tech-card">
+            <div class="tech-title"><i class="fa-solid fa-chart-line"></i> مانیتورینگ و گزارش</div>
+            <div class="tech-body">
+                مانیتورینگ ۲۴/۷، گراف مصرف، هشدار روی تلگرام/ایمیل و گزارش‌های دوره‌ای برای نمایندگان.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== آپتایم و لوکیشن‌ها ========== -->
+<section id="uptime">
+    <div class="section-title">
+        <span></span>
+        <h2>آپتایم، مانیتورینگ و ۱۶ لوکیشن جهانی</h2>
+    </div>
+    <p class="section-sub">
+        وضعیت آنلاین بودن دیتاسنترها، پینگ، Packet Loss و Latency به صورت زنده و رندوم در این بخش نمایش داده می‌شود.  
+        این بخش برای نمایش داینامیک روی سایت طراحی شده و می‌تواند به سیستم مانیتورینگ واقعی متصل شود.
+    </p>
+
+    <div class="locations-grid" id="locationsGrid">
+        <!-- با جاوااسکریپت پر می‌شود -->
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-card">
+            <div class="stat-label">تعداد کل کاربران</div>
+            <div class="stat-value" id="totalUsers">0</div>
+            <div class="stat-sub">شروع از ۹۷۸۱ کاربر، افزایش روزانه بین ۱۵۰ تا ۲۵۰ نفر</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">تعداد کل نمایندگان</div>
+            <div class="stat-value" id="totalResellers">0</div>
+            <div class="stat-sub">شروع از ۹۳۰ نماینده، افزایش روزانه بین ۲۰ تا ۴۰ نفر</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">میانگین آپتایم شبکه</div>
+            <div class="stat-value" id="avgUptime">99.99%</div>
+            <div class="stat-sub">بر اساس ۱۶ لوکیشن، به صورت داینامیک محاسبه و نمایش داده می‌شود</div>
+        </div>
+    </div>
+
+    <div class="cta-strip">
+        <div>
+            <strong>می‌خواهی روی چند لوکیشن همزمان سرویس داشته باشی؟</strong><br>
+            می‌توانیم برایت سناریوی Multi-Location، Failover و Anycast طراحی کنیم.
+        </div>
+        <div>
+            <a href="https://t.me/v2rei" target="_blank" class="btn-outline">
+                <i class="fa-brands fa-telegram"></i>
+                مشاوره طراحی شبکه در تلگرام
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ثبت نام و تیکت ========== -->
+<section id="register">
+    <div class="section-title">
+        <span></span>
+        <h2>ثبت نام، درخواست پنل و تیکت پشتیبانی</h2>
+    </div>
+    <p class="section-sub">
+        فرم زیر برای ثبت نام و درخواست پنل است. بعد از ثبت، پیام فعال‌سازی نمایش داده می‌شود  
+        و می‌توانی از طریق تلگرام با تیم v2rei برای فعال‌سازی پنل در ارتباط باشی.
+    </p>
+
+    <div class="form-grid">
+        <!-- فرم ثبت نام -->
+        <div class="card">
+            <h3 style="margin-bottom:8px;font-size:17px;">ثبت نام کاربر جدید و درخواست پنل</h3>
+            <p style="font-size:12px;color:#d1d5db;margin-bottom:10px;">
+                اطلاعات خودت را وارد کن، پلن مورد نظر را انتخاب کن و روی ثبت نام بزن.  
+                بعد از ثبت، راهنمای فعال‌سازی پنل و لینک‌های تلگرام برایت نمایش داده می‌شود.
+            </p>
+            <form id="registerForm">
+                <div class="form-row">
+                    <div>
+                        <label>نام و نام خانوادگی</label>
+                        <input type="text" required>
+                    </div>
+                    <div>
+                        <label>ایمیل</label>
+                        <input type="email" required>
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top:8px;">
+                    <div>
+                        <label>شماره تماس / آیدی تلگرام</label>
+                        <input type="text" required>
+                    </div>
+                    <div>
+                        <label>پلن مورد نظر</label>
+                        <select required>
+                            <option value="">انتخاب پلن...</option>
+                            <option>Core Edge - ۱۱۰,۰۰۰ تومان / گیگ</option>
+                            <option>Pro Transit - ۱۳۵,۰۰۰ تومان / گیگ</option>
+                            <option>Enterprise I/O - ۱۶۶,۰۰۰ تومان / گیگ</option>
+                            <option>Global Anycast - ۱۸۹,۰۰۰ تومان / گیگ</option>
+                            <option>Ultra Secure - ۲۲۱,۰۰۰ تومان / گیگ</option>
+                            <option>Ultimate Provider - ۲۵۹,۰۰۰ تومان / گیگ</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-top:8px;">
+                    <label>توضیحات تکمیلی (اختیاری)</label>
+                    <textarea placeholder="نوع استفاده، تعداد یوزر، لوکیشن‌های مورد علاقه، نیازهای خاص امنیتی یا شبکه‌ای..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        ثبت نام
+                    </button>
+                </div>
+            </form>
+
+            <div class="register-success" id="registerSuccess">
+                <strong>ثبت نام شما با موفقیت ثبت شد.</strong><br>
+                جهت فعالسازی پنل خود، لطفاً به پشتیبانی ما در تلگرام مراجعه کنید:
+                <div class="tg-links">
+                    <a class="tg-pill" href="https://t.me/v2rei" target="_blank">
+                        <i class="fa-brands fa-telegram"></i> اکانت اصلی @v2rei
+                    </a>
+                    <a class="tg-pill" href="https://t.me/v2rei_bot" target="_blank">
+                        <i class="fa-brands fa-telegram"></i> ربات مدیریت @v2rei_bot
+                    </a>
+                    <a class="tg-pill" href="https://t.me/v2reiadmin" target="_blank">
+                        <i class="fa-brands fa-telegram"></i> پشتیبانی ۱ @v2reiadmin
+                    </a>
+                    <a class="tg-pill" href="https://t.me/v2reiadmin1" target="_blank">
+                        <i class="fa-brands fa-telegram"></i> پشتیبانی ۲ @v2reiadmin1
+                    </a>
+                    <a class="tg-pill" href="https://t.me/v2reiadmin2" target="_blank">
+                        <i class="fa-brands fa-telegram"></i> پشتیبانی ۳ @v2reiadmin2
+                    </a>
+                    <a class="tg-pill" href="https://t.me/v2reiadmin3" target="_blank">
+                        <i class="fa-brands fa-telegram"></i> پشتیبانی ۴ @v2reiadmin3
+                    </a>
+                    <a class="tg-pill" href="https://t.me/v2rei" target="_blank">
+                        <i class="fa-brands fa-telegram"></i> کانال رسمی @v2rei
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- تیکت پشتیبانی -->
+        <div class="card" id="support">
+            <h3 style="margin-bottom:8px;font-size:17px;">بخش تیکت پشتیبانی</h3>
+            <p style="font-size:12px;color:#d1d5db;margin-bottom:10px;">
+                اگر سوال فنی، مشکل شبکه، درخواست تغییر لوکیشن، بهینه‌سازی یا هر موضوع دیگری داری،  
+                از طریق این فرم تیکت ثبت کن تا تیم فنی v2rei بررسی کند.
+            </p>
+            <form id="ticketForm">
+                <div class="form-row">
+                    <div>
+                        <label>موضوع تیکت</label>
+                        <input type="text" required>
+                    </div>
+                    <div>
+                        <label>اولویت</label>
+                        <select required>
+                            <option value="">انتخاب اولویت...</option>
+                            <option>کم</option>
+                            <option>معمولی</option>
+                            <option>بالا</option>
+                            <option>بحرانی</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-top:8px;">
+                    <label>شرح مشکل / درخواست</label>
+                    <textarea required placeholder="لطفاً مشکل، خطا، نوع سرویس، لوکیشن و هر جزئیات فنی که داری را بنویس..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-outline">
+                        <i class="fa-solid fa-ticket"></i>
+                        ثبت تیکت
+                    </button>
+                </div>
+            </form>
+            <div class="register-success" id="ticketSuccess" style="background:rgba(37,99,235,0.12);border-color:rgba(37,99,235,0.7);">
+                <strong>تیکت شما ثبت شد.</strong><br>
+                برای پیگیری سریع‌تر، می‌توانید شماره تیکت خود را در تلگرام برای پشتیبانی ارسال کنید.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ویدیوها (استفاده بصری، نه آموزشی) ========== -->
+<section id="videos">
+    <div class="section-title">
+        <span></span>
+        <h2>ویدیوهای ویژوال و فضای دیتاسنتر v2rei</h2>
+    </div>
+    <p class="section-sub">
+        این ویدیوها آموزشی نیستند؛ صرفاً برای ایجاد حس فضای دیتاسنتر، شبکه، نورپردازی و حال‌وهوای حرفه‌ای داخل سایت استفاده شده‌اند.  
+        اگر خواستی بعداً عوضشان کنی، فقط کافی است لینک‌ها را در تگ‌های ویدیو تغییر بدهی.
+    </p>
+
+    <!-- همه لینک‌های ویدیو کنار هم برای راحتی تغییر
+        گراند سایت (هیرو): https://filebin.net/4uwzc6cqw4rtb5pf/47802-451812879_tiny.mp4
+        ویدیو ۱: https://filebin.net/4uwzc6cqw4rtb5pf/4000-176277732_tiny.mp4
+        ویدیو ۲: https://filebin.net/4uwzc6cqw4rtb5pf/2176-155747466_tiny.mp4
+        ویدیو ۳: https://filebin.net/4uwzc6cqw4rtb5pf/202587-918431513_tiny.mp4
+        ویدیو ۴: https://filebin.net/4uwzc6cqw4rtb5pf/14900-259623335_tiny.mp4
+        ویدیو ۵: https://filebin.net/4uwzc6cqw4rtb5pf/142363-780562112_tiny.mp4
+        ویدیو ۶: https://filebin.net/4uwzc6cqw4rtb5pf/2176-155747466_tiny.mp4
+        ویدیو ۷: https://filebin.net/4uwzc6cqw4rtb5pf/4001-176277735_tiny.mp4
+        ویدیو ۸: https://filebin.net/4uwzc6cqw4rtb5pf/87273-601148577_tiny.mp4
+    -->
+
+    <div class="videos-grid">
+        <div class="video-card">
+            <video controls muted>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/4000-176277732_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption">فضای دیتاسنتر و رک‌ها</div>
+        </div>
+        <div class="video-card">
+            <video controls muted>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/2176-155747466_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption">نورپردازی و تجهیزات شبکه</div>
+        </div>
+        <div class="video-card">
+            <video controls muted>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/202587-918431513_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption">زیرساخت و کابل‌کشی حرفه‌ای</div>
+        </div>
+        <div class="video-card">
+            <video controls muted>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/14900-259623335_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption">محیط دیتاسنتر و فضای داخلی</div>
+        </div>
+        <div class="video-card">
+            <video controls muted>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/142363-780562112_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption">نمای نزدیک از تجهیزات</div>
+        </div>
+        <div class="video-card">
+            <video controls muted>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/2176-155747466_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption">تکرار فضای نورپردازی برای حس یکپارچگی</div>
+        </div>
+        <div class="video-card">
+            <video controls muted>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/4001-176277735_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption">نمای دیگر از رک‌ها و سرورها</div>
+        </div>
+        <div class="video-card">
+            <video controls muted>
+                <source src="https://filebin.net/4uwzc6cqw4rtb5pf/87273-601148577_tiny.mp4" type="video/mp4">
+            </video>
+            <div class="video-caption">شات کلی از فضای دیتاسنتر</div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section id="faq">
+    <div class="section-title">
+        <span></span>
+        <h2>سوالات متداول تخصصی</h2>
+    </div>
+    <p class="section-sub">
+        اگر سوالت اینجا نبود، از طریق تیکت یا تلگرام با ما در ارتباط باش.
+    </p>
+
+    <div class="faq-list">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۱. تفاوت اصلی پلن‌ها در چیست و همه پلن‌ها روی ۱۶ لوکیشن فعال هستند؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                بله، تمام پلن‌ها روی هر ۱۶ دیتاسنتر و لوکیشن فعال هستند و محدود به یک کشور خاص نیستی.  
+                تفاوت پلن‌ها در نوع CPU، سطح Oversell، نوع RAM، IOPS دیسک NVMe، نوع شبکه (پورت، QoS، Anycast)،  
+                سطح امنیت (DDoS، WAF، Segmentation) و سطح SLA و اولویت پشتیبانی است.  
+                هرچه پلن بالاتر باشد، منابع اختصاصی‌تر، شبکه پایدارتر و امکانات حرفه‌ای‌تری برای نمایندگی دریافت می‌کنی.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۲. آیا امکان انتخاب دیتاسنتر و جابه‌جایی بین لوکیشن‌ها وجود دارد؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                بله، هنگام ساخت سرویس می‌توانی لوکیشن مورد نظر را از بین ۱۶ دیتاسنتر انتخاب کنی.  
+                در صورت نیاز، امکان مهاجرت سرویس بین لوکیشن‌ها (Migration) با هماهنگی تیم فنی وجود دارد.  
+                برای سرویس‌های حساس، می‌توانیم سناریوهای Multi-Location، Failover و Load Balancing طراحی کنیم.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۳. نوع مجازی‌سازی چیست و آیا دسترسی کامل به سیستم‌عامل داریم؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                مجازی‌سازی روی تمام پلن‌ها KVM Full Virtualization است؛ یعنی یک ماشین مجازی واقعی  
+                با دسترسی کامل به سیستم‌عامل، کرنل، ماژول‌ها و تنظیمات شبکه داری.  
+                امکان نصب انواع توزیع‌های لینوکس، Docker، تونلینگ، پروکسی و… وجود دارد.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۴. وضعیت DDoS Protection و امنیت شبکه چگونه است؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                روی تمام پلن‌ها حداقل یک لایه DDoS Protection فعال است. در پلن‌های بالاتر،  
+                از Scrubbing Centerهای چندلایه، Rate Limit هوشمند، WAF لایه ۷ و RuleSet اختصاصی استفاده می‌شود.  
+                شبکه به صورت Segmented طراحی شده تا ترافیک مخرب یک سرویس روی بقیه تأثیر نگذارد.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۵. آیا امکان ارائه نمایندگی (Reseller) و زیرنماینده وجود دارد؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                بله، تمرکز اصلی پلن Ultimate Provider و تا حدی Pro Transit و Global Anycast روی نمایندگان است.  
+                می‌توانی مستقیم سرویس بفروشی، زیرنماینده تعریف کنی و حتی ساختار چندسطحی بسازی.  
+                امکان ارائه API، مستندات فنی و حتی طراحی برندینگ اختصاصی (White Label) هم وجود دارد.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۶. مانیتورینگ سرویس‌ها چگونه انجام می‌شود و آیا دسترسی به لاگ‌ها داریم؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                مانیتورینگ در چند سطح انجام می‌شود: زیرساخت (Host، Network، Storage)، سرویس (Ping، Port، Latency)  
+                و در صورت نیاز Application (HTTP، TLS، Response Code و…).  
+                از طریق پنل می‌توانی وضعیت سرویس‌ها، گراف مصرف، لاگ‌های مهم و هشدارها را ببینی.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>۷. آیا محدودیت خاصی روی نوع استفاده وجود دارد؟</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                استفاده باید در چارچوب قوانین بین‌المللی، قوانین دیتاسنترها و قوانین داخلی کشورها باشد.  
+                فعالیت‌های مخرب، حملات، اسپم، فیشینگ، اسکن گسترده و هرگونه فعالیت غیرقانونی ممنوع است.  
+                برای استفاده‌های قانونی حتی اگر از نظر فنی سنگین باشند، می‌توانیم پلن مناسب طراحی کنیم.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== پارتنرها ========== -->
+<section id="partners">
+    <div class="section-title">
+        <span></span>
+        <h2>پارتنرها و دیتاسنترهای همکار</h2>
+    </div>
+    <p class="section-sub">
+        زیرساخت v2rei روی ترکیبی از دیتاسنترها و شبکه‌های معتبر جهانی پیاده‌سازی شده است.
+    </p>
+    <div class="partners-row">
+        <div class="partner-pill">
+            <span class="partner-dot"></span>
+            <span>Equinix Datacenters</span>
+        </div>
+        <div class="partner-pill">
+            <span class="partner-dot"></span>
+            <span>Digital Realty</span>
+        </div>
+        <div class="partner-pill">
+            <span class="partner-dot"></span>
+            <span>OVHcloud</span>
+        </div>
+        <div class="partner-pill">
+            <span class="partner-dot"></span>
+            <span>Hetzner</span>
+        </div>
+        <div class="partner-pill">
+            <span class="partner-dot"></span>
+            <span>Leaseweb</span>
+        </div>
+        <div class="partner-pill">
+            <span class="partner-dot"></span>
+            <span>G-Core / Edge DC</span>
+        </div>
+        <div class="partner-pill">
+            <span class="partner-dot"></span>
+            <span>Arista / Juniper Networks</span>
+        </div>
+        <div class="partner-pill">
+            <span class="partner-dot"></span>
+            <span>Cloudflare Partner Network</span>
+        </div>
+    </div>
+</section>
+
+<!-- ========== فوتر ========== -->
+<footer>
+    <div class="footer-inner">
+        <div>
+            کلیه حقوق برای <strong>v2rei</strong> محفوظ است.
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+            <span>ارتباط سریع:</span>
+            <a class="tg-pill" href="https://t.me/v2rei" target="_blank">
+                <i class="fa-brands fa-telegram"></i> @v2rei
+            </a>
+            <a class="tg-pill" href="https://t.me/v2rei_bot" target="_blank">
+                <i class="fa-brands fa-telegram"></i> @v2rei_bot
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== اسکریپت‌ها ========== -->
+<script>
+    // دیتاسنترها و آپتایم رندوم
+    const locations = [
+        { dc: "Equinix LD5", country: "لندن، انگلستان" },
+        { dc: "Equinix FR5", country: "فرانکفورت، آلمان" },
+        { dc: "Digital Realty AMS", country: "آمستردام، هلند" },
+        { dc: "OVH RBX", country: "روبه، فرانسه" },
+        { dc: "OVH GRA", country: "گرولاین، فرانسه" },
+        { dc: "Hetzner NBG", country: "نورنبرگ، آلمان" },
+        { dc: "Hetzner FSN", country: "فالکنشتاین، آلمان" },
+        { dc: "Leaseweb AMS", country: "آمستردام، هلند" },
+        { dc: "Leaseweb FRA", country: "فرانکفورت، آلمان" },
+        { dc: "G-Core LUX", country: "لوکزامبورگ" },
+        { dc: "Edge DC IST", country: "استانبول، ترکیه" },
+        { dc: "Edge DC DXB", country: "دبی، امارات" },
+        { dc: "DC East EU", country: "ورشو، لهستان" },
+        { dc: "DC North EU", country: "استکهلم، سوئد" },
+        { dc: "DC West US", country: "لس‌آنجلس، آمریکا" },
+        { dc: "DC East US", country: "نیویورک، آمریکا" }
+    ];
+
+    function randomRange(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function renderLocations() {
+        const grid = document.getElementById("locationsGrid");
+        grid.innerHTML = "";
+        let uptimeSum = 0;
+
+        locations.forEach(loc => {
+            const ping = randomRange(25, 120).toFixed(1);
+            const loss = randomRange(0, 0.8).toFixed(2);
+            const jitter = randomRange(0.5, 8).toFixed(1);
+            const uptime = randomRange(99.7, 100).toFixed(3);
+
+            uptimeSum += parseFloat(uptime);
+
+            const statusClass = uptime > 99.9 ? "good" : (uptime > 99.8 ? "good" : "warn");
+
+            const card = document.createElement("div");
+            card.className = "location-card";
+            card.innerHTML = `
+                <div class="location-header">
+                    <div class="location-dc">${loc.dc}</div>
+                    <div class="location-country">${loc.country}</div>
+                </div>
+                <div class="location-metrics">
+                    <span class="metric-pill good"><i class="fa-solid fa-signal"></i> Ping: ${ping}ms</span>
+                    <span class="metric-pill"><i class="fa-solid fa-wave-square"></i> Jitter: ${jitter}ms</span>
+                    <span class="metric-pill ${statusClass}"><i class="fa-solid fa-percent"></i> Loss: ${loss}%</span>
+                    <span class="metric-pill good"><i class="fa-solid fa-clock"></i> Uptime: ${uptime}%</span>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        const avg = (uptimeSum / locations.length).toFixed(3);
+        document.getElementById("avgUptime").textContent = avg + "%";
+    }
+
+    renderLocations();
+    setInterval(renderLocations, 8000);
+
+    // کانتر کاربران و نمایندگان با افزایش روزانه
+    const USERS_KEY = "v2rei_users";
+    const RESELLERS_KEY = "v2rei_resellers";
+    const DATE_KEY = "v2rei_last_date";
+
+    function initCounters() {
+        const today = new Date().toISOString().slice(0,10);
+        let users = parseInt(localStorage.getItem(USERS_KEY) || "9781", 10);
+        let resellers = parseInt(localStorage.getItem(RESELLERS_KEY) || "930", 10);
+        const lastDate = localStorage.getItem(DATE_KEY);
+
+        if (lastDate !== today) {
+            const addUsers = Math.floor(randomRange(150, 250));
+            const addResellers = Math.floor(randomRange(20, 40));
+            users += addUsers;
+            resellers += addResellers;
+            localStorage.setItem(USERS_KEY, users);
+            localStorage.setItem(RESELLERS_KEY, resellers);
+            localStorage.setItem(DATE_KEY, today);
+        }
+
+        document.getElementById("totalUsers").textContent = users.toLocaleString("fa-IR");
+        document.getElementById("totalResellers").textContent = resellers.toLocaleString("fa-IR");
+    }
+
+    initCounters();
+
+    // فرم ثبت نام
+    const registerForm = document.getElementById("registerForm");
+    const registerSuccess = document.getElementById("registerSuccess");
+    registerForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        registerSuccess.style.display = "block";
+        registerSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    // فرم تیکت
+    const ticketForm = document.getElementById("ticketForm");
+    const ticketSuccess = document.getElementById("ticketSuccess");
+    ticketForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        ticketSuccess.style.display = "block";
+        ticketSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    // FAQ آکاردئونی
+    document.querySelectorAll(".faq-question").forEach(q => {
+        q.addEventListener("click", () => {
+            const answer = q.nextElementSibling;
+            const icon = q.querySelector("i");
+            const isOpen = answer.style.display === "block";
+            document.querySelectorAll(".faq-answer").forEach(a => a.style.display = "none");
+            document.querySelectorAll(".faq-question i").forEach(i => i.style.transform = "rotate(0deg)");
+            if (!isOpen) {
+                answer.style.display = "block";
+                icon.style.transform = "rotate(180deg)";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
